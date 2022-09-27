@@ -4,7 +4,7 @@ services:
   jira:
     depends_on:
       - postgresql
-    image: jira-software-arm64:9.2.0
+    image: jira-software-arm64:${VERSION}
     networks:
       - jiranet
     volumes:

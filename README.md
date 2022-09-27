@@ -8,8 +8,11 @@ You should (at least) change the Postgres password before running it [here](http
 
 First we build the image in the project root folder:
 
+The default version is 8.22.0, you can change it through the `VERSION ARG`
+
 ```bash
-docker build -t jira-software-arm64:9.2.0 .
+export VERSION=9.2.0
+docker build -t jira-software-arm64:$VERSION .
 ```
 
 Then...
@@ -21,5 +24,6 @@ docker-compose up
 or you can run it standalone with:
 
 ```bash
-docker run -p 8080:8080 -it jira-software-arm64:9.2.0
+export VERSION=9.2.0
+docker run -p 8080:8080 -it jira-software-arm64:$VERSION
 ```
